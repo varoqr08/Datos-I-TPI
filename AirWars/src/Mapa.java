@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
 /**
  * Created by Gabriel on 3/20/2017.
@@ -41,11 +42,13 @@ public class Mapa extends JPanel implements ActionListener,KeyListener{
         }
     });
     Player Jugador = new Player();//creacion de jugador
-    int cambX = 0, cambY = 0, velBalas = -3,cantBalas=0, cantBalasEnemigo = 0, cantEnemigosTotal =0, contadorCantEnemigos = 0;//valores de cambio de jugador y cantidad de balas de enemigos o jugadores
-    Boolean condicionBalas = false, MovBala = false, condicionEnemigos = false,balasEnemigos = false, movEnemigos = false, alimentarCola = false,choqueEnemigos =false;//balas,movimient balas,creacion enemigos,creacion balas enemigos,moviemiento de enemigos
+    int cambX = 0, cambY = 0, velBalas = -3,cantBalas=0, cantBalasEnemigo = 0, cantEnemigosTotal =0, contadorCantEnemigos = 0,PosEnemX=0,PosEnemY=0;//valores de cambio de jugador y cantidad de balas de enemigos o jugadores
+    Boolean condicionBalas = false, MovBala = false, condicionEnemigos = false,balasEnemigos = false, movEnemigos = false, alimentarCola = false,choqueEnemigos =false,pintarPowerUps =false;//balas,movimient balas,creacion enemigos,creacion balas enemigos,moviemiento de enemigos
     LinkList<Bala> listaBalas = new LinkList();//lista de balas
     Cola colaEnemigos = new Cola();//cola de enemigos activos
     Cola colaEspera  = new Cola();//cola de enemigos que no han entrado al juego
+    Pila pilaPowerUps = new Pila();
+    Random generador = new Random();
     public Mapa(int cantEnenemigos){
         cantEnemigosTotal = cantEnenemigos;
         int x=0;
@@ -73,6 +76,20 @@ public class Mapa extends JPanel implements ActionListener,KeyListener{
         g.fillRect(Jugador.getPosX(),Jugador.getPosY(),50,30);//primer dato cantidad de pixeles que se mueve a la Derecha segundo dato cantidad de pixeles que se mueve  abajo los ultmos dos numeros son las dimensiones del cuadrado
         g.setColor(Color.GRAY);//Barra de vida
         g.fillRect(0,461,Jugador.getVidas(),30);//posicion de la barra de vida
+
+        //LOGICA POWERUPS
+        if(pintarPowerUps==true){
+            PowerUps powerUp = new PowerUps(PosEnemX,PosEnemY);
+            g.setColor(Color.BLACK);
+            g.fillOval(powerUp.getPosX(),powerUp.getPosY(),10,10);
+            if((Jugador.getPosX()<powerUp.getPosX()&&(Jugador.getPosX()+50)>powerUp.getPosX() )){
+               if((Jugador.getPosY()-15)<(powerUp.getPosY()-5)&&(Jugador.getPosY()+15)>(powerUp.getPosY()-10)){
+                    PosEnemY = 0;
+                    PosEnemX = 0;
+                }
+            }
+        }
+        //FIN LOGICA POWERUPS
 
         //LOGICA ALIMENTAR COLA ACTIVA DE ENEMIGOS
         if(alimentarCola==true){
@@ -178,6 +195,12 @@ public class Mapa extends JPanel implements ActionListener,KeyListener{
                             if(enemigoActual.getDato().getHP()>1){
                                 enemigoActual.getDato().setHP(enemigoActual.getDato().getHP()-1);
                             }else{
+                                int valor = 1+generador.nextInt(100);
+                                if(valor<=100&&valor>0){
+                                    PosEnemX=enemigoActual.getDato().getPosX();
+                                    PosEnemY=enemigoActual.getDato().getPosY();
+                                    pintarPowerUps = true;
+                                }
                                 enemigoActual = null;
                             }
                             //FIN LOGICA CALCULO HP ENEMIGOS
@@ -282,6 +305,9 @@ public class Mapa extends JPanel implements ActionListener,KeyListener{
             else{
                 cantBalas-=1;
             }
+        }
+        if(tecla == KeyEvent.VK_Z){
+
         }
         }
     //FIN DE INPUT DE USUARIO
