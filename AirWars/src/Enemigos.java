@@ -7,14 +7,16 @@ public class Enemigos {
     private int PosX;
     private  int PosY;
     private int daño;
-    private int tipo;
+    private int tipo;//2= jet 1=Bombarderos 3=kamikaze
     private int HP;
-
+    private int contadorMovimiento;
     public Enemigos(){
         Random random = new Random();
-        PosX = 1+random.nextInt(585);
+        PosX = 20+random.nextInt(520);
         PosY = 0;
         HP = 2;
+        tipo = 1;
+        contadorMovimiento = -30;
     }
     public int getPosX() {
         return PosX;
@@ -55,4 +57,13 @@ public class Enemigos {
     public void setHP(int HP) {
         this.HP = HP;
     }
+
+    public int getContadorMovimiento() {
+        return contadorMovimiento;
+    }
+
+    public void setContadorMovimiento(int contadorMovimiento) {
+        this.contadorMovimiento = contadorMovimiento;
+    }
 }
+
