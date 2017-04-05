@@ -7,7 +7,7 @@ import java.awt.*;
 public class Bala {
     private int  posX;
     private int posY;
-    private int afiliacion;//define si la bala es alidad o enemiga 1 para aliada 0 para enemiga
+    private int afiliacion;//define si la bala es aliadad o enemiga 1 para aliada 0 para enemiga
     private  int dañoBala;
     public Bala(){
         this.posX = 0;
