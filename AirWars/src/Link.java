@@ -34,8 +34,4 @@ public class Link extends  Bala {
         System.out.println(informacion);
     }
 
-    public static void main(String[] args) {
-
-    }
-
 }
