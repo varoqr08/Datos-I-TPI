@@ -10,9 +10,7 @@ public class LinkList <T>  extends Link {
         size = 0;
 
     }
-    public static void main(String[] args) {
-        LinkList theList = new LinkList();
-    }
+    
     public int getSize(){
         return this.size;
     }
