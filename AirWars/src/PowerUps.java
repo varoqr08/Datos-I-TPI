@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by Gabriel on 3/27/2017.
  */
@@ -9,6 +11,8 @@ public class PowerUps {
     PowerUps(int PosX,int PosY){
         this.PosX = PosX;
         this.PosY = PosY;
+        Random random = new Random();
+        this.Tipo = 1+random.nextInt(3);
     }
 
     public int getPosX() {

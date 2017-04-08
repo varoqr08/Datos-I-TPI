@@ -10,13 +10,17 @@ public class Enemigos {
     private int tipo;//2= jet 1=Bombarderos 3=kamikaze
     private int HP;
     private int contadorMovimiento;
+    private int Nivel;//variable para jefes y su dificultad
     public Enemigos(){
         Random random = new Random();
         PosX = 20+random.nextInt(520);
         PosY = 0;
-        HP = 2;
-        tipo = 1;
-        contadorMovimiento = -30;
+        tipo = 1+random.nextInt(3);
+        HP=2;
+        if(tipo !=1){
+            HP = 1;
+        }
+        contadorMovimiento = -50;
     }
     public int getPosX() {
         return PosX;
@@ -65,5 +69,12 @@ public class Enemigos {
     public void setContadorMovimiento(int contadorMovimiento) {
         this.contadorMovimiento = contadorMovimiento;
     }
-}
 
+    public int getNivel() {
+        return Nivel;
+    }
+
+    public void setNivel(int nivel) {
+        Nivel = nivel;
+    }
+}

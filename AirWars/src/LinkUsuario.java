@@ -1,31 +1,31 @@
 /**
- * Created by Gabriel on 3/20/2017.
+ * Created by Gabriel on 4/5/2017.
  */
-public class Link extends  Bala {
-    private Bala informacion;
+public class LinkUsuario {
+    private int informacion;
 
-    private Link next;
+    private LinkUsuario next;
 
-    public Link() {
+    public LinkUsuario() {
 
     }
 
 
-    public Bala getInformacion() {
+    public int getInformacion() {
         return this.informacion;
     }
 
-    public Link getNext() {
+    public LinkUsuario getNext() {
         return this.next;
     }
-    public void setNext(Link L){
+    public void setNext(LinkUsuario L){
         this.next = L;
     }
-    public void setInformacion(Bala informacion){
+    public void setInformacion(int informacion){
         this.informacion =informacion ;
     }
 
-    public Link( Bala informacion){
+    public LinkUsuario( int informacion){
 
         this.informacion = informacion;
 

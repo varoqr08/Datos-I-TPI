@@ -7,8 +7,9 @@ import java.awt.*;
 public class Bala {
     private int  posX;
     private int posY;
-    private int afiliacion;//define si la bala es aliadad o enemiga 1 para aliada 0 para enemiga
+    private int afiliacion;//define si la bala es alidad o enemiga 1 para aliada 0 para enemiga
     private  int dañoBala;
+    private int MovX; //movimiento en X para las balas
     public Bala(){
         this.posX = 0;
         this.posY = 0;
@@ -44,4 +45,13 @@ public class Bala {
     public void setDañoBala(int dañoBala) {
         this.dañoBala = dañoBala;
     }
+
+    public int getMovX() {
+        return MovX;
+    }
+
+    public void setMovX(int movX) {
+        MovX = movX;
+    }
 }
+

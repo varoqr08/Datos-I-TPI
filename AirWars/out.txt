@@ -1,0 +1,32 @@
+null
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0
+Stryde
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0
+a
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0
+a
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0
+Stryde
+Nivel Maximo: 10
+Tiempo Jugado: 712
+Puntaje: 2016
+a
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0
+
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0
+a
+Nivel Maximo: 1
+Tiempo Jugado: 0
+Puntaje: 0

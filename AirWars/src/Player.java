@@ -5,11 +5,13 @@ public class Player {
     private  int PosX;
     private  int PosY;
     private int vidas;
+    private  int dañoJugador;
 
     public Player(){
         PosX = 250;
         PosY = 410;
         vidas = 60;
+        dañoJugador = 1;
     }
 
     public int getPosY() {
@@ -34,5 +36,13 @@ public class Player {
 
     public void setVidas(int vidas) {
         this.vidas = vidas;
+    }
+
+    public int getDañoJugador() {
+        return dañoJugador;
+    }
+
+    public void setDañoJugador(int dañoJugador) {
+        this.dañoJugador = dañoJugador;
     }
 }

@@ -1,31 +1,31 @@
 /**
- * Created by Gabriel on 3/20/2017.
+ * Created by Gabriel on 4/4/2017.
  */
-public class Link extends  Bala {
-    private Bala informacion;
+public class LinkTorres {
+        private Torre informacion;
 
-    private Link next;
+        private LinkTorres next;
 
-    public Link() {
+    public LinkTorres() {
 
     }
 
 
-    public Bala getInformacion() {
+    public Torre getInformacion() {
         return this.informacion;
     }
 
-    public Link getNext() {
+    public LinkTorres getNext() {
         return this.next;
     }
-    public void setNext(Link L){
+    public void setNext(LinkTorres L){
         this.next = L;
     }
-    public void setInformacion(Bala informacion){
+    public void setInformacion(Torre informacion){
         this.informacion =informacion ;
     }
 
-    public Link( Bala informacion){
+    public LinkTorres( Torre informacion){
 
         this.informacion = informacion;
 

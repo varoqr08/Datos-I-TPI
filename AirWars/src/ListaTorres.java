@@ -1,10 +1,10 @@
 /**
- * Created by Gabriel on 3/20/2017.
+ * Created by Gabriel on 4/4/2017.
  */
-public class LinkList <T>  extends Link {
-    private Link firstLink;
-    private int size;
-     LinkList(){
+public class ListaTorres {
+        public LinkTorres firstLink;
+        private int size;
+        ListaTorres(){
         super();
         firstLink = null;
         size = 0;
@@ -20,16 +20,16 @@ public class LinkList <T>  extends Link {
         return(firstLink == null);
     }
 
-    public void insertFirstLink(Bala cantidad){
-        Link newLink = new Link(cantidad);
+    public void insertFirstLink(Torre cantidad){
+        LinkTorres newLink = new LinkTorres(cantidad);
         newLink.setNext(firstLink);
         firstLink = newLink;
         size +=1;
     }
-    public void insertLink(Bala cantidad,int contador){
-        Link LinkInsertar = new Link(cantidad);
-        Link LinkActual = firstLink;
-        Link LinkPrevio = LinkActual;
+    public void insertLink(Torre cantidad,int contador){
+        LinkTorres LinkInsertar = new LinkTorres(cantidad);
+        LinkTorres LinkActual = firstLink;
+        LinkTorres LinkPrevio = LinkActual;
         int x = 0;
         while(x!=contador){
             LinkPrevio = LinkActual;
@@ -42,7 +42,7 @@ public class LinkList <T>  extends Link {
     }
 
     public void removeFirst(){
-        Link linkReference = firstLink;
+        LinkTorres linkReference = firstLink;
 
         if(!isEmpty()) {
             firstLink = firstLink.getNext();
@@ -51,9 +51,9 @@ public class LinkList <T>  extends Link {
         }
 
     }
-    public void removesEspecifico(T cantidad){
-        Link linkActual = firstLink;
-        Link linkPrevio = firstLink;
+    public void removesEspecifico(Torre cantidad){
+        LinkTorres linkActual = firstLink;
+        LinkTorres linkPrevio = firstLink;
         while(linkActual.getInformacion()!=cantidad){
             linkPrevio = linkActual;
             linkActual= linkActual.getNext();
@@ -69,8 +69,8 @@ public class LinkList <T>  extends Link {
             removeFirst();
         }
         else {
-            Link linkActual = firstLink;
-            Link linkPrevio = firstLink;
+            LinkTorres linkActual = firstLink;
+            LinkTorres linkPrevio = firstLink;
             int x= 0;
             while(x!=Posicion){
                 linkPrevio = linkActual;
@@ -83,8 +83,8 @@ public class LinkList <T>  extends Link {
             }
         }
     }
-    public Link getEspecifico(int posicion){
-        Link linkActual = firstLink;
+    public LinkTorres getEspecifico(int posicion){
+        LinkTorres linkActual = firstLink;
         int x = 0;
         while(x!=posicion){
             linkActual= linkActual.getNext();
@@ -93,7 +93,7 @@ public class LinkList <T>  extends Link {
         return linkActual;
     }
     public void display(){
-        Link theLink =  firstLink;
+        LinkTorres theLink =  firstLink;
         while(theLink != null){
             theLink.display();
             System.out.println("Next Link: " + theLink.getNext());
